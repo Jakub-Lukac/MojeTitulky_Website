@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css?V=2">
+    <!-- Cahce ulozisko, preto vzdy nieco zmenit za css aby sa to aplikovalo!!! -->
+    <link rel="shortcut icon" href="./closed-captioning-solid.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Moje Titulky</title>
+</head>
+
+<body>
+
+    <div id="menuDiv" class="menuDiv">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <h1 class="hlNadpis">Moje Titulky</h1>
+                </div>
+                <div class="navBtn">
+                    <div class="navBtnRight">
+                        <ul class="menuNav">
+                            <li class="menuItem">
+                                <a href="#fungovanie"> Ako to funguje ?</a>
+                            </li>
+                            <li class="menuItem">
+                                <a href="#video">Video</a>
+                            </li>
+                            <li class="menuItem">
+                                <a href="#download">Download</a>
+                            </li>
+                            <li class="menuItem">
+                                <a href="#kontakt">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rovnobeznik">
+
+        </div>
+    </div>
+    <div class="mainDiv">
+        <a name="fungovanie"></a>
+        <div class="container">
+            <div class="nadpisCasti">
+                Ako to funguje ?
+                <div class="gridDiv">
+                    <div class="slider">
+                        <div class="slides">
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                            <input type="radio" name="radio-btn" id="radio5">
+                            <input type="radio" name="radio-btn" id="radio6">
+                            <div class="slide first">
+                                <img src="./Screenshots_app/Default_screen.png" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./Screenshots_app/home.png" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./Screenshots_app/film.png" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./Screenshots_app/serial.png" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./Screenshots_app/kontakt.png" alt="">
+                            </div>
+                            <div class="slide">
+                                <img src="./Screenshots_app/nastavenia.png" alt="">
+                            </div>
+                        </div>
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                            <div class="auto-btn5"></div>
+                            <div class="auto-btn6"></div>
+                        </div>
+                        <div class="navigation-manual">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                            <label for="radio5" class="manual-btn"></label>
+                            <label for="radio6" class="manual-btn"></label>
+                        </div>
+                    </div>
+                    <div class="divtext">
+                        <div class="text">
+                            Aplikácia umožňuje rýchle, efektívne sťahovanie a premenovávanie titulkov k filmom a
+                            seriálom.</br>
+                            Pre dosiahnutie plnej funkcionality aplikácie využívajte webový prehliadač Chrome.
+                            Pre sťahovanie titulkov aplikácia využíva webovú stránku <b><a class="blue"
+                                    href="https://www.titulky.com/" target="_blank">titulky.com</a></b>,
+                            filmy a seriály
+                            sťahujte z webovej stránky <b><a class="blue" href="https://rarbgunblocked.org/torrents.php"
+                                    target="_blank">rarbg.com</a></b>.
+                            Dôležitou súčasťou je program <b><a class="blue" href="https://chromedriver.chromium.org/"
+                                    target="_blank">ChromeDriver</a></b>, ktorý zabezpečuje
+                            automatizované sťahovanie
+                            titulkov, preto je potrebné sledovať <b><a class="blue"
+                                    href="https://www.digitalcitizen.life/version-google-chrome/" target="_blank">verziu
+                                    vašeho webového prehliadača</a></b>, aby sa zhodovala s
+                            verziou ChromeDrivera.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a name="video"></a>
+        <div class="container">
+            <div class="nadpisCasti bezposunu">
+                Video
+                <div class="divVideo">
+                    <img class="obrVid" src="./Screenshots_app/serial.png" alt="">
+                    <div class="playBtn">
+                        <i class="fa-solid fa-play icon"></i>
+                    </div>
+                </div>
+                <div class="text">
+                    Toto video slúži ako tutoriál. Vo videu sa dozviete čo všetko potrebujete pre funkčnosť aplikácie
+                    MojeTitulky, a taktiež sa dozviete ako správne narábať s aplikáciou. V pripáde hocijakých otázok nás
+                    neváhajte<b><a class="blue" href="#kontakt"> kontaktovať.</a></b>
+                </div>
+            </div>
+        </div>
+        <a name="download"></a>
+        <div class="container">
+            <div class="nadpisCasti bezposunu">
+                Download
+                <div class="download">
+                    <a href="/MojeTitulky Installer.msi" download="">
+                        <button class="btn">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </a>
+                </div>
+                <!-- <div class="text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque iste quidem dolorum quam culpa
+                    et,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, nobis porro? Eius autem libero
+                    beatae asperiores. Vero a quas esse nesciunt iure rem ipsa ut cum, recusandae vel. Sequi fuga, totam
+                    sint non omnis veniam. Veniam aperiam incidunt voluptatibus. Ducimus, mollitia. Odit, autem.
+                    Aliquam, magni deserunt maxime quaerat officia adipisci.
+                </div> -->
+            </div>
+        </div>
+        <a name="kontakt"></a>
+        <div class="container">
+            <div class="nadpisCasti margin_100 bezposunu">
+                Kontakt
+                <div class="gridDivKontakt">
+                    <div class="odkazy">
+                        <div class="castOdkaz">
+                            <a class="link" href="https://www.facebook.com/profile.php?id=100084480723775/"
+                                target="_blank">
+                                <i class="fab fa-facebook-f obr"></i>
+                                <span class="nazovOdkaz">Facebook</span>
+                            </a>
+                        </div>
+                        <div class="castOdkaz">
+                            <a class="link" href="https://www.instagram.com/moje_titulky/" target="_blank">
+                                <i class="fab fa-instagram obr"></i>
+                                <span class="nazovOdkaz">Instagram</span>
+                            </a>
+                        </div>
+                        <div class="castOdkaz">
+                            <a class="link" href="">
+                                <i class="fas fa-envelope obr"></i>
+                                <span class="nazovOdkaz">Email</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="formular">
+                        <form>
+                            <div>
+                                <input class="poleForm" type="text" maxlength="25" id="meno" placeholder="Vaše meno">
+                            </div>
+                            <div style="padding-top: 6px;">
+                                <input class="poleForm" type="email" maxlength="40" id="email"
+                                    placeholder="meno@example.com">
+                            </div>
+                            <div style="padding-top: 15px;">
+                                <textarea class="poleForm area" name="sprava" id="sprava" cols="30" rows="10"
+                                    placeholder="Vaša správa"></textarea>
+                            </div>
+                            <div>
+                                <input class="btnForm" onclick="odoslat()" type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="modal">
+            <div id="darkBg">
+
+            </div>
+            <video class="modalVid" controls src="./Ramdom_Lines_x264.mp4"></video>
+        </section>
+    </div>
+
+    <script>
+        window.onscroll = function () {
+            "use strict";
+            if (document.body.scrollTop >= 40 || document.documentElement.scrollTop >= 40) {
+                document.getElementById("menuDiv").classList.add("scrolled");
+            }
+            else {
+                document.getElementById("menuDiv").classList.remove("scrolled");
+            }
+        }
+        function odoslat() {
+            var sprava = document.getElementById("sprava").value + " Odoslal: " + document.getElementById("meno").value;
+            window.open('mailto:mojetitulky@gmail.com?subject=správa z formulára&cc=' + document.getElementById("email").value + '&body=' + sprava);
+        }
+        var counter = 1;
+        setInterval(function () {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 6) {
+                counter = 1;
+            }
+        }, 5000);
+        $("div.playBtn").click((e) => {
+            console.log("ide");
+            $("video.modalVid").attr("src", "./video_upravene.mp4")
+
+            $("section#modal").css({ display: "block", opacity: 0 });
+            $("video.modalVid").css({ marginTop: "-50px" });
+
+            $("section#modal").animate({ opacity: 1 }, 500);
+            $("video.modalVid").animate({ marginTop: "0px" }, 500);
+        });
+        // skrytie
+        $("div#darkBg").click((e) => {
+            $("section#modal").animate({ opacity: 0 }, {
+                duration: 500, complete: () => {
+                    $("section#modal").css({ display: "none" });
+                }
+            });
+            $("video#modalVid").animate({ marginTop: "+50px" }, 500);
+
+            //$("section#modal").css({display: "none"});
+        });
+
+    </script>
+</body>
+
+</html>

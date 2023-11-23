@@ -1,0 +1,896 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&family=Tiro+Devanagari+Marathi&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.0.7/css/all.css');
+@import url('https://use.fontawesome.com/releases/v6.1.2/css/all.css');
+
+:root {
+    --bgColor: #181e36;
+    --bgColor2: #23283e;
+    --bgColor3: #2e3349;
+    --textColor: #44b5fe;
+    --biela: #ffffff;
+    --alternativaBielej: rgb(220,220,220);
+    --obrys: #1b1c1e;
+    --fontMain: 'Fira Sans', sans-serif;
+    --fontStyle: italic; /* aby sa aplikoval font na Safari */
+    --fontWeight: 500;  /* aby sa aplikoval weight  na Safari */
+}
+
+* {
+    box-sizing: border-box;
+    /* medzeri na 0px*/
+}
+/* animacia */
+
+
+body {
+    background-color: var(--bgColor);
+    color: var(--biela);
+}
+
+html {
+    scroll-behavior: smooth;
+    /* aby to neskočilo na to, ale pekne tam prišlo*/
+}
+
+.logo {
+    width: 225px;
+    z-index: 3;
+}
+
+/* Navigation Bar*/
+.hlNadpis {
+    color: var(--textColor);
+    font-family: var(--fontMain);
+    font-style: var(--fontStyle);
+    font-weight: var(--fontWeight);
+    height: 124px;
+    line-height: 124px;
+    padding: 0px;
+    margin: 0px;
+    transition: 0.33s;
+    white-space: nowrap;
+}
+
+.menuDiv {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 124px;
+    background-color: transparent;
+    transition: 0.33s;
+    z-index: 3;
+}
+
+.mainDiv {
+    padding-top: 124px;
+}
+
+.container {
+    /* s tym ze je v menuDiv, ktorý ma height 124px, tak to container zdedi*/
+    width: 1200px;
+    margin: auto;
+    padding: 0px;
+}
+
+.nav {
+    display: flex;
+    width: 1100px;
+}
+
+.navBtn {
+    width: 100%;
+    z-index: 3;
+    /*background-color: var(--bgColor2);*/
+}
+
+.navBtnRight {
+    float: right;
+    padding-top: 55px;
+    transition: 0.33s;
+}
+
+.menuNav {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+.menuItem {
+    float: left;
+    font-size: 20px;
+}
+
+.rovnobeznik {
+    height: 80px;
+    width: 69vw;
+    background-color: var(--bgColor2);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -ms-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    transform: skew(20deg);
+    float: right;
+    margin-top: -80px;
+    z-index: 2;
+    display: none;
+    transition: 700ms;
+}
+
+.menuItem a {
+    display: block;
+    color: var(--textColor);
+    text-decoration: none;
+    text-align: center;
+    padding: 0px 30px;
+    font-family: var(--fontMain);
+    font-style: var(--fontStyle);
+    font-weight: var(--fontWeight);
+    transition: 500ms;
+}
+
+.menuItem a:hover {
+    color: var(--biela);
+    transform: scale(1.1);
+}
+
+/*----------------------------------------------------*/
+/* Casti */
+.nadpisCasti {
+    margin-top: 130px;
+    font-family: var(--fontMain);
+    font-style: var(--fontStyle);
+    font-weight: var(--fontWeight);
+    color: var(--textColor);
+    font-size: 40px;
+    text-align: center;
+}
+
+.bezposunu {
+    /*margin-top: 50px;*/
+    font-family: var(--fontMain);
+    font-style: var(--fontStyle);
+    font-weight: var(--fontWeight);
+    color: var(--textColor);
+    font-size: 40px;
+    text-align: center;
+}
+
+.padding_20 {
+    padding: 20px;
+}
+
+.margin_30 {
+    margin-top: 30px;
+}
+
+.margin_50 {
+    margin-top: 50px;
+}
+
+.margin_100 {
+    margin-top: 100px;
+}
+
+.gridDiv {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    /* repeat(2,1fr); opakuj 2 stplce 1 fragment siroke*/
+    margin-top: 50px;
+}
+
+/* slider */
+
+.slider{
+    width: 800px;
+    height: 500px;
+    /*padding: 0px 20px;*/
+    margin-right: 20px;
+    border: 2px solid var(--obrys);
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px var(--bgColor2);
+    overflow: hidden;
+}
+
+
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+/* css for manual navigation*/
+
+.navigation-manual{
+   position: absolute;
+   width: 800px;
+   margin-top: -40px;
+   display: flex;
+   justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid var(--textColor);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: var(--textColor);
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+#radio5:checked ~ .first{
+    margin-left: -80%;
+}
+
+#radio6:checked ~ .first{
+    margin-left: -100%;
+}
+
+.navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.navigation-auto div{
+    border: 2px solid var(--textColor);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+    
+}
+
+.navigation-auto div:not(:last-child){
+   margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+   background-color: var(--textColor);
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--textColor);
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--textColor);
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--textColor);
+}
+
+#radio5:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--textColor);
+}
+
+#radio6:checked ~ .navigation-auto .auto-btn1{
+    background-color: var(--textColor);
+}
+
+.divimg {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+img.img {
+    width: 100%;
+    border-radius: 7px;
+    border: 2px solid var(--obrys);
+    box-shadow: 10px 10px 20px var(--bgColor2);
+}
+
+.divtext {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.text {
+    color: var(--alternativaBielej);
+    font-size: 18px;
+    text-align: center;
+    line-height: 25px;
+    padding: 30px 20px 20px 20px;
+}
+.blue{
+    color: var(--textColor);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    transition: 200ms;
+}
+.blue:hover{
+    color: rgb(121, 205, 255);
+}
+
+/*---------------------------------------------------------------*/
+/*Video*/
+.divVideo {
+    width: 100%;
+    padding: 0px 20px;
+    margin-top: 50px;
+}
+
+.obrVid {
+    width: 80%;
+    border: 2px solid var(--obrys);
+    border-radius: 7px;
+    box-shadow: 10px 10px 20px var(--bgColor2);
+}
+
+
+.icon{
+    margin-left: auto;
+    margin-right: auto;
+    width: 3%; /* aby len ta icona bola vpodstate hover*/
+    cursor: pointer;
+    color: white;
+    display: block;
+    margin-top: -30%;
+    margin-bottom: 30%;
+    transition: 400ms;
+}
+.icon:hover{
+    color: var(--textColor);
+    transform: scale(1.5);
+}
+
+/*DOWNLOAD*/
+.download {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    width: 40%;;
+    background-color: var(--textColor);
+    border: 0px;
+    color: var(--biela);
+    padding: 20px 25px;
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 10px;
+    transition: 400ms;
+}
+
+.btn:hover {
+    box-shadow: 4px 4px 8px var(--bgColor3);
+    transform: scale(1.02);
+}
+
+/*-------------------------------------------------------------*/
+/*Kontakt*/
+.odkazy {
+    flex: 1 1 0px;
+}
+
+.formular {
+    flex: 1 1 0px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--bgColor2);
+    box-shadow: 2px 2px 5px var(--bgColor3);
+}
+
+.poleForm {
+    border-radius: 5px;
+    border: 1px solid var(--bgColor);
+    background-color: var(--bgColor);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    -ms-appearance: none;
+    height: 44px;
+    width: 100%;
+    padding: 6px;
+    color: var(--biela)
+}
+
+.area {
+    height: 250px;
+    resize: none;
+}
+
+.btnForm {
+    border-radius: 10px;
+    border: 0px;
+    height: 44px;
+    width: 150px;
+    background-color: var(--textColor);
+    color: var(--biela);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.btnForm:hover {
+    box-shadow: 10px 10px 20px var(--bgColor3);
+    transform: scale(1.02);
+}
+
+div.castOdkaz {
+    width: 300px;
+    margin: 40px 170px 30px 130px;
+    transition: 300ms;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    /* aby sa to neposuvalo - transparent 2px*/
+}
+
+div.castOdkaz:hover {
+    border-radius: 15px;
+    border: 2px solid var(--textColor);
+    cursor: pointer;
+    box-shadow: 4px 4px 10px var(--bgColor3);
+}
+
+.obr {
+    padding: 30px 30px 30px 0px;
+}
+
+.nazovOdkaz {
+    font-size: 30px;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--textColor);
+    padding: 35px 41px;
+}
+
+.gridDivKontakt {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/*-------------------------------------------------------------------*/
+/* Javascript*/
+.scrolled {
+    background-color: var(--bgColor3);
+    height: 80px;
+}
+
+.scrolled .menuDiv {
+    height: 80px;
+    transition: 0.33s;
+}
+
+.scrolled .hlNadpis {
+    height: 80px;
+    line-height: 80px;
+    transition: 0.33s;
+}
+
+.scrolled .navBtnRight {
+    padding-top: 30px;
+    transition: 0.33s;
+}
+
+.scrolled .rovnobeznik {
+    display: unset;
+    transition: 700ms;
+}
+
+/* MODAL */
+
+section#modal{
+    position: fixed; /* nebude sa hybat ked scrollujem*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /*vyska priestoru v prehliadaci -- view port height*/
+    display: none; /* tymto zmizne vsetko co je v div a img ale je to akokeby stale tam*/
+}
+div#darkBg{
+    background-color: rgba(0, 0, 0, 0.6); /* posledne cislo znaci prehladnost farby*/
+    width: 100%;
+    height: 100%;
+}
+.modalVid{   
+    max-width: 85%;
+    max-height: 75%;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* BREAK POINTS, PRE ROZNE MEDIA*/
+
+@media (max-width:1200px) {
+    .container {
+        width: 100%;
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .logo {
+        width: 250px;
+        padding-left: 30px;
+    }
+
+    .menuItem a {
+        padding: 0px 20px;
+    }
+
+    .navBtn {
+        padding-right: 30px;
+    }
+
+    .gridDiv {
+        grid-template-columns: 1fr;
+    }
+
+    .slider {
+        margin: 0px auto;
+    }
+
+
+    .formular {
+        margin-right: 20px;
+    }
+
+    .text {
+        font-size: 17px;
+    }
+
+    .icon{
+        margin-top: -30%;
+        margin-bottom: 30%;
+    }
+}
+
+@media (max-width:980px) {
+    .rovnobeznik{
+        margin-right: -20px; /* keby to tam nebolo tak prava strana rovnobeznika vytrca*/
+    }
+    .gridDivKontakt {
+        grid-template-columns: 1fr;
+        margin-top: 0px;
+    }
+
+    .formular {
+        margin-left: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .obrVid {
+        width: 90%;
+    } 
+
+    .nadpisCasti {
+        font-size: 35px;
+        margin-top: 140px;
+    }
+
+    div.castOdkaz{
+        margin: 40px auto 30px auto;
+    }
+    
+
+    /* slider */
+    .slider{
+        width: 660px;
+        height: 400px;
+    }
+
+    .slides{
+        width: 500%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slide img{
+        width: 660px;
+        height: 400px;
+    }
+
+    .navigation-manual{
+        width: 660px;
+        margin-top: -30px;
+    }
+
+    .navigation-auto{
+        width: 660px;
+        margin-top: -30px;
+    }
+
+    .manual-btn{
+        padding: 4px;
+    }
+
+    .navigation-auto div{
+        padding: 4px;
+    }
+
+    .icon{
+        margin-top: -32%;
+        margin-bottom: 32%;
+    } 
+
+    .modalVid{   
+        max-width: 95%;
+        max-height: 95%;
+    }
+}
+
+@media (max-width: 800px) {
+    .navBtn {
+        display: none;
+    }
+
+    .rovnobeznik {
+        width: 50vw;
+    }
+
+    .divimg {
+        padding: 0px 60px;
+    }
+
+    .obrVid {
+        width: 100%;
+    }
+
+    .bezposunu {
+        margin-top: 50px;
+    }
+    /* slider */
+    .slider{
+        width: 640px;
+        height: 400px;
+    }
+
+    .slides{
+        width: 500%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slide img{
+        width: 640px;
+        height: 400px;
+    }
+
+    .navigation-manual{
+        width: 640px;
+        margin-top: -20px;
+    }
+
+    .navigation-auto{
+        width: 640px;
+        margin-top: -20px;
+    }
+
+    .manual-btn{
+        padding: 3px;
+    }
+
+    .navigation-auto div{
+        padding: 3px;
+    }
+    .icon{
+        margin-top: -37%;
+        margin-bottom: 37%;
+    }
+    .modalVid{   
+        max-height: 100%;
+    }
+    .icon:hover{
+        transform: scale(1.35);
+    }
+}
+@media (max-width: 710px) {
+    .slider{
+        width: 475px;
+        height: 285px;
+    }
+
+    .slides{
+        width: 500%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slide img{
+        width: 475px;
+        height: 285px;
+    }
+
+    .navigation-manual{
+        width: 475px;
+        margin-top: -20px;
+    }
+
+    .navigation-auto{
+        width: 475px;
+        margin-top: -20px;
+    }
+
+    .manual-btn{
+        padding: 3px;
+    }
+
+    .navigation-auto div{
+        padding: 3px;
+    }
+    .icon{
+        margin-top: -37%;
+        margin-bottom: 37%;
+    }
+    .icon:hover{
+        transform: scale(1.25);
+    }
+}
+
+@media (max-width: 610px) {
+    .slider{
+        width: 420px;
+        height: 245px;
+    }
+
+    .slides{
+        width: 500%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slide img{
+        width: 420px;
+        height: 245px;
+    }
+
+    .navigation-manual{
+        width: 420px;
+        margin-top: -20px;
+    }
+
+    .navigation-auto{
+        width: 420px;
+        margin-top: -20px;
+    }
+
+    .manual-btn{
+        padding: 3px;
+    }
+
+    .navigation-auto div{
+        padding: 3px;
+    }
+    .icon{
+        margin-top: -37%;
+        margin-bottom: 37%;
+    }
+    .icon:hover{
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width: 500px) {
+    .rovnobeznik {
+        display: unset;
+        width: 33vw;
+    }
+
+    .menuDiv {
+        height: 80px;
+        background-color: var(--bgColor3);
+    }
+    .hlNadpis{
+        height: 80px;
+        line-height: 80px;
+        z-index: 3;
+    }
+
+    .castOdkaz {
+        width: 100%;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .nadpisCasti {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    .bezposunu {
+        /*kvoli scrolleru*/
+        margin-top: 40px;
+    }
+
+    /* slider */
+    .slider{
+        width: 400px;
+        height: 240px;
+    }
+
+    .slides{
+        width: 500%;
+        height: 100%;
+        display: flex;
+    }
+
+    .slide img{
+        width: 400px;
+        height: 240px;
+    }
+
+    .navigation-manual{
+        width: 400px;
+        margin-top: -15px;
+    }
+
+    .navigation-auto{
+        width: 400px;
+        margin-top: -15px;
+    }
+
+    .manual-btn{
+        padding: 3px;
+    }
+    .manual-btn:not(:last-child){
+        margin-right: 20px;
+    }
+
+    .navigation-auto div{
+        padding: 3px;
+    }
+    .navigation-auto div:not(:last-child){
+        margin-right: 20px;
+    }
+
+    .icon{
+        margin-top: -40%;
+        margin-bottom: 40%;
+    }
+}
